@@ -96,6 +96,7 @@
             this.saveFileDialog4 = new System.Windows.Forms.SaveFileDialog();
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -298,7 +299,7 @@
             this.SaveRandom.Name = "SaveRandom";
             this.SaveRandom.Size = new System.Drawing.Size(176, 37);
             this.SaveRandom.TabIndex = 20;
-            this.SaveRandom.Text = "Save testing results for random set";
+            this.SaveRandom.Text = "Save results";
             this.SaveRandom.UseVisualStyleBackColor = false;
             this.SaveRandom.Click += new System.EventHandler(this.SaveRandom_Click);
             // 
@@ -311,7 +312,7 @@
             this.SaveTrain.Name = "SaveTrain";
             this.SaveTrain.Size = new System.Drawing.Size(176, 37);
             this.SaveTrain.TabIndex = 19;
-            this.SaveTrain.Text = "Save testing results of training set";
+            this.SaveTrain.Text = "Save results";
             this.SaveTrain.UseVisualStyleBackColor = false;
             this.SaveTrain.Click += new System.EventHandler(this.SaveTrain_Click);
             // 
@@ -454,6 +455,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.BurlyWood;
+            this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.label21);
             this.tabPage2.Controls.Add(this.TrainLVQNetwork);
             this.tabPage2.Controls.Add(this.label22);
@@ -483,7 +485,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabPage2.Size = new System.Drawing.Size(914, 553);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "GroupMethodOfDataHandling";
+            this.tabPage2.Text = "LearningVectorQuantization";
             // 
             // label21
             // 
@@ -497,13 +499,15 @@
             // 
             // TrainLVQNetwork
             // 
+            this.TrainLVQNetwork.BackColor = System.Drawing.Color.RoyalBlue;
+            this.TrainLVQNetwork.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.TrainLVQNetwork.Location = new System.Drawing.Point(629, 169);
             this.TrainLVQNetwork.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TrainLVQNetwork.Name = "TrainLVQNetwork";
             this.TrainLVQNetwork.Size = new System.Drawing.Size(176, 39);
             this.TrainLVQNetwork.TabIndex = 50;
             this.TrainLVQNetwork.Text = "Train Network";
-            this.TrainLVQNetwork.UseVisualStyleBackColor = true;
+            this.TrainLVQNetwork.UseVisualStyleBackColor = false;
             this.TrainLVQNetwork.Click += new System.EventHandler(this.TrainLVQNetwork_Click);
             // 
             // label22
@@ -522,7 +526,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(62, 48);
             this.label11.TabIndex = 47;
-            this.label11.Text = "Save ";
+            this.label11.Text = "Save Network";
             // 
             // pictureBox3
             // 
@@ -537,24 +541,28 @@
             // 
             // SaveGeneratedLVQ
             // 
+            this.SaveGeneratedLVQ.BackColor = System.Drawing.Color.RoyalBlue;
+            this.SaveGeneratedLVQ.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.SaveGeneratedLVQ.Location = new System.Drawing.Point(638, 461);
             this.SaveGeneratedLVQ.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.SaveGeneratedLVQ.Name = "SaveGeneratedLVQ";
             this.SaveGeneratedLVQ.Size = new System.Drawing.Size(176, 37);
             this.SaveGeneratedLVQ.TabIndex = 41;
             this.SaveGeneratedLVQ.Text = "Save results";
-            this.SaveGeneratedLVQ.UseVisualStyleBackColor = true;
+            this.SaveGeneratedLVQ.UseVisualStyleBackColor = false;
             this.SaveGeneratedLVQ.Click += new System.EventHandler(this.SaveGeneratedLVQ_Click);
             // 
             // SaveTrainLVQ
             // 
+            this.SaveTrainLVQ.BackColor = System.Drawing.Color.RoyalBlue;
+            this.SaveTrainLVQ.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.SaveTrainLVQ.Location = new System.Drawing.Point(230, 461);
             this.SaveTrainLVQ.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.SaveTrainLVQ.Name = "SaveTrainLVQ";
             this.SaveTrainLVQ.Size = new System.Drawing.Size(176, 37);
             this.SaveTrainLVQ.TabIndex = 40;
             this.SaveTrainLVQ.Text = "Save results";
-            this.SaveTrainLVQ.UseVisualStyleBackColor = true;
+            this.SaveTrainLVQ.UseVisualStyleBackColor = false;
             this.SaveTrainLVQ.Click += new System.EventHandler(this.SaveTrainLVQ_Click);
             // 
             // TrainResultsLVQ
@@ -579,24 +587,28 @@
             // 
             // TestGeneratedLVQ
             // 
+            this.TestGeneratedLVQ.BackColor = System.Drawing.Color.RoyalBlue;
+            this.TestGeneratedLVQ.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.TestGeneratedLVQ.Location = new System.Drawing.Point(434, 461);
             this.TestGeneratedLVQ.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TestGeneratedLVQ.Name = "TestGeneratedLVQ";
             this.TestGeneratedLVQ.Size = new System.Drawing.Size(176, 37);
             this.TestGeneratedLVQ.TabIndex = 37;
             this.TestGeneratedLVQ.Text = "Test random set";
-            this.TestGeneratedLVQ.UseVisualStyleBackColor = true;
+            this.TestGeneratedLVQ.UseVisualStyleBackColor = false;
             this.TestGeneratedLVQ.Click += new System.EventHandler(this.TestGeneratedLVQ_Click);
             // 
             // TestTrainLVQ
             // 
+            this.TestTrainLVQ.BackColor = System.Drawing.Color.RoyalBlue;
+            this.TestTrainLVQ.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.TestTrainLVQ.Location = new System.Drawing.Point(25, 461);
             this.TestTrainLVQ.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TestTrainLVQ.Name = "TestTrainLVQ";
             this.TestTrainLVQ.Size = new System.Drawing.Size(176, 37);
             this.TestTrainLVQ.TabIndex = 36;
             this.TestTrainLVQ.Text = "Test trainig set";
-            this.TestTrainLVQ.UseVisualStyleBackColor = true;
+            this.TestTrainLVQ.UseVisualStyleBackColor = false;
             this.TestTrainLVQ.Click += new System.EventHandler(this.TestTrainLVQ_Click);
             // 
             // label16
@@ -606,7 +618,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(205, 20);
             this.label16.TabIndex = 35;
-            this.label16.Text = "Max Model Complexity ";
+            this.label16.Text = "Decrease Learning Rate";
             // 
             // DecayRateLVQ
             // 
@@ -640,7 +652,6 @@
             this.LearningRateLVQ.Name = "LearningRateLVQ";
             this.LearningRateLVQ.Size = new System.Drawing.Size(100, 20);
             this.LearningRateLVQ.TabIndex = 30;
-            this.LearningRateLVQ.Visible = false;
             // 
             // label12
             // 
@@ -680,13 +691,15 @@
             // 
             // TrainLVQ
             // 
+            this.TrainLVQ.BackColor = System.Drawing.Color.RoyalBlue;
+            this.TrainLVQ.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.TrainLVQ.Location = new System.Drawing.Point(259, 169);
             this.TrainLVQ.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TrainLVQ.Name = "TrainLVQ";
             this.TrainLVQ.Size = new System.Drawing.Size(176, 39);
             this.TrainLVQ.TabIndex = 24;
             this.TrainLVQ.Text = "Create Neural Network";
-            this.TrainLVQ.UseVisualStyleBackColor = true;
+            this.TrainLVQ.UseVisualStyleBackColor = false;
             this.TrainLVQ.Click += new System.EventHandler(this.TrainLVQ_Click);
             // 
             // SaveLVQ
@@ -780,6 +793,15 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // label15
+            // 
+            this.label15.Location = new System.Drawing.Point(256, 125);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(205, 20);
+            this.label15.TabIndex = 52;
+            this.label15.Text = "Learning Rate";
             // 
             // Form1
             // 
@@ -880,6 +902,7 @@
         private System.Windows.Forms.TextBox bCoefficient;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label15;
     }
 }
 

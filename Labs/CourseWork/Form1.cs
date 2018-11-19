@@ -188,7 +188,7 @@ namespace CourseWork
             if (filepath == null || lvq == null)
                 return;
             lvq.Save(filepath);
-            MessageBox.Show("Мережа LVQ збережена");       
+            MessageBox.Show("LVQ has been saved");       
         }
 
         // генерування тестових даних
@@ -280,7 +280,7 @@ namespace CourseWork
         {
             if (PARAMETERS == 0)
             {
-                MessageBox.Show("Спочатку завантажте дані");
+                MessageBox.Show("Initial error occured");
                 return;
             }
 
@@ -290,12 +290,12 @@ namespace CourseWork
 
             if (resultLearning_rate2 == false || resultMin_error2 == false || resultDecay_rate == false)
             {
-                MessageBox.Show("Не всі обов'язкові поля заповнені для створення мережі LVQ");
+                MessageBox.Show("Not all fields are entered for creation of LVQ");
                 return;
             }
         
             lvq = new LVQ(inputs, Normalize.FormAnswersLVQ(answers), MIN_ERROR2, LEARNING_RATE2, DECAY_RATE, NUM_OF_CLUSTERS);
-            MessageBox.Show("Мережу LVQ створено");
+            MessageBox.Show("LVQ has been created");
 
         }
 
@@ -304,7 +304,7 @@ namespace CourseWork
         {
             if (lvq == null)
             {
-                MessageBox.Show("Спочатку створіть мережу або завантажте її з файлу");
+                MessageBox.Show("First, create network");
                 return;
             }
 
@@ -317,14 +317,14 @@ namespace CourseWork
             Cursor.Current = Cursors.Arrow;
             tSpan = sWatch2.Elapsed;
             this.TimeLVQ.Text = Convert.ToString(tSpan);
-            MessageBox.Show("Мережа LVQ навчена");
+            MessageBox.Show("LVQ has been trained");
         }
 
         // Тестування навчальної вибірки (DeltaBarDelta)
         private void TestTrain_Click(object sender, EventArgs e)
         {
             if (dbd == null)
-                MessageBox.Show("Initial error occured");
+                MessageBox.Show("First create and train network");
             else
             {
                 ResultTrainDeltaBarDelta = new DataTable();
@@ -359,7 +359,7 @@ namespace CourseWork
         private void TestTrainLVQ_Click(object sender, EventArgs e)
         {
             if (lvq == null)
-                MessageBox.Show("Спочатку створіть мережу або завантажте її із файла");
+                MessageBox.Show("First create network and train it");
             else
             {
                 ResultTrainLVQ = new DataTable();
@@ -372,7 +372,7 @@ namespace CourseWork
                     ResultTrainLVQ.Columns.Add(ParametersNames[i]);
                 }
 
-                ResultTrainLVQ.Columns.Add("Кластер");
+                ResultTrainLVQ.Columns.Add("Cluster");
 
                 for (int i = 0; i < TRAINING_PATTERNS; i++)
                 {
@@ -382,7 +382,7 @@ namespace CourseWork
                     {
                         row[k + 1] = inputs[i][k];
                     }
-                    row["Кластер"] = lvq.getCluster(inputs[i]);
+                    row["Cluster"] = lvq.getCluster(inputs[i]);
                     ResultTrainLVQ.Rows.Add(row);
                 }
 
@@ -394,7 +394,7 @@ namespace CourseWork
         private void TestRandom_Click(object sender, EventArgs e)
         {
             if (dbd == null)
-                MessageBox.Show("Initial error occured");
+                MessageBox.Show("First create and train network");
             else
             {
                 ResultTestDeltaBarDelta = new DataTable();
@@ -427,7 +427,7 @@ namespace CourseWork
         private void TestGeneratedLVQ_Click(object sender, EventArgs e)
         {
             if (lvq == null)
-                MessageBox.Show("Спочатку створіть мережу або завантажте її із файла");
+                MessageBox.Show("First create and train network");
             else
             {
                 ResultTestLVQ = new DataTable();
@@ -521,7 +521,7 @@ namespace CourseWork
                 {
                     text += ParametersNames[i].PadRight(10);
                 }
-                text += "Кластер".PadRight(10);
+                text += "Cluster".PadRight(10);
                 text += Environment.NewLine;
                 foreach (DataGridViewRow row in TrainResultsLVQ.Rows)
                 {
@@ -533,7 +533,7 @@ namespace CourseWork
                     text += Environment.NewLine + Environment.NewLine;
                 }
                 File.AppendAllText(filepath, text);
-                MessageBox.Show("Результати навчальної вибірки збережено");
+                MessageBox.Show("The results of testing the trainig set have been saved");
             }
             catch (Exception ex)
             {
@@ -541,18 +541,18 @@ namespace CourseWork
             }
         }
 
-        // Запис результатів для випадкової вибірки (BackPropagation)
+        // Запис результатів для випадкової вибірки (DeltaBarDelta)
         private void SaveRandom_Click(object sender, EventArgs e)
         {
             if(PARAMETERS == 0)
             {
-                MessageBox.Show("Спочатку завантажте дані");
+                MessageBox.Show("Initial error occured");
                 return;
             }
             saveFileDialog1.ShowDialog();
         }
 
-        // виклик діалогу для збереження результатів у файл (RandomResults, BackPropagation)
+        // виклик діалогу для збереження результатів у файл (RandomResults, DeltaBarDelta)
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             try
@@ -563,7 +563,7 @@ namespace CourseWork
                 {
                     text += ParametersNames[i].PadRight(10);
                 }
-                text += "Кластер".PadRight(10);
+                text += "Cluster".PadRight(10);
                 text += Environment.NewLine;
                 foreach (DataGridViewRow row in RandomResults.Rows)
                 {
@@ -575,7 +575,7 @@ namespace CourseWork
                     text += Environment.NewLine + Environment.NewLine;
                 }
                 File.AppendAllText(filepath, text);
-                MessageBox.Show("Результати випадкової вибірки збережено");
+                MessageBox.Show("The results of testing the random set have been saved");
             }
             catch (Exception ex)
             {
@@ -588,7 +588,7 @@ namespace CourseWork
         {
             if (PARAMETERS == 0)
             {
-                MessageBox.Show("Спочатку завантажте дані");
+                MessageBox.Show("initial error");
                 return;
             }
             saveFileDialog4.ShowDialog();
@@ -605,7 +605,7 @@ namespace CourseWork
                 {
                     text += ParametersNames[i].PadRight(10);
                 }
-                text += "Кластер".PadRight(10);
+                text += "Cluster".PadRight(10);
                 text += Environment.NewLine;
                 foreach (DataGridViewRow row in GeneratedResultsLVQ.Rows)
                 {
@@ -617,7 +617,7 @@ namespace CourseWork
                     text += Environment.NewLine + Environment.NewLine;
                 }
                 File.AppendAllText(filepath, text);
-                MessageBox.Show("Результати випадкової вибірки збережено");
+                MessageBox.Show("The results of testing the random set have been saved");
             }
             catch (Exception ex)
             {
